@@ -160,11 +160,10 @@ const operationalAr: Record<keyof typeof operationalEn, string> = {
   "common.before": "قبل",
   "common.after": "بعد",
   "common.by": "بواسطة {name}",
-  "common.pageOf": "الصفحة {page} من {total}"
+  "common.pageOf": "الصفحة {page} من {total}",
 };
 
-export type TranslationKey =
-  keyof typeof en | keyof typeof operationalEn;
+export type TranslationKey = keyof typeof en | keyof typeof operationalEn;
 type TranslationCatalog = Record<TranslationKey, string>;
 const catalogs: Record<Locale, TranslationCatalog> = {
   en: { ...en, ...operationalEn },
