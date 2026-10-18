@@ -9,6 +9,7 @@ export interface ApplicantWorkHistory {
   id: string;
   company_name: string;
   role_name: string;
+  description: string;
   start_date: string;
   end_date: string | null;
 }

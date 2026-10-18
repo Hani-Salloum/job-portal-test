@@ -279,11 +279,53 @@ const applicationsAr: Record<keyof typeof applicationsEn, string> = {
   "applications.empty.filteredDescription": "وسّع نطاق الراتب أو الخبرة، أو امسح الفلاتر لعرض جميع المتقدمين.",
 };
 
-export type TranslationKey = keyof typeof en | keyof typeof operationalEn | keyof typeof jobsEn | keyof typeof applicationsEn;
+const applicantEn = {
+  "applicant.back": "Back to applications",
+  "applicant.skills": "Skills",
+  "applicant.workHistory": "Work history",
+  "applicant.certificates": "Certificates",
+  "applicant.about": "About",
+  "applicant.email": "Email",
+  "applicant.phone": "Phone",
+  "applicant.present": "Present",
+  "applicant.downloadCv": "Download CV",
+  "applicant.socialLinks": "Social profiles",
+  "applicant.socialLink": "Visit {platform} profile (opens in a new tab)",
+  "applicant.social.linked_in": "LinkedIn",
+  "applicant.social.github": "GitHub",
+  "applicant.social.instagram": "Instagram",
+  "applicant.social.x": "X",
+  "applicant.empty.skills": "No skills provided.",
+  "applicant.empty.workHistory": "No work history provided.",
+  "applicant.empty.certificates": "No certificates provided.",
+} as const;
+
+const applicantAr: Record<keyof typeof applicantEn, string> = {
+  "applicant.back": "العودة إلى طلبات التوظيف",
+  "applicant.skills": "المهارات",
+  "applicant.workHistory": "الخبرات العملية",
+  "applicant.certificates": "الشهادات",
+  "applicant.about": "نبذة",
+  "applicant.email": "البريد الإلكتروني",
+  "applicant.phone": "رقم الهاتف",
+  "applicant.present": "حتى الآن",
+  "applicant.downloadCv": "تحميل السيرة الذاتية",
+  "applicant.socialLinks": "حسابات التواصل الاجتماعي",
+  "applicant.socialLink": "زيارة حساب {platform} (يفتح في علامة تبويب جديدة)",
+  "applicant.social.linked_in": "لينكدإن",
+  "applicant.social.github": "جيت هب",
+  "applicant.social.instagram": "إنستغرام",
+  "applicant.social.x": "إكس",
+  "applicant.empty.skills": "لم تُضف مهارات بعد.",
+  "applicant.empty.workHistory": "لم تُضف خبرات عملية بعد.",
+  "applicant.empty.certificates": "لم تُضف شهادات بعد.",
+};
+
+export type TranslationKey = keyof typeof en | keyof typeof operationalEn | keyof typeof jobsEn | keyof typeof applicationsEn | keyof typeof applicantEn;
 type TranslationCatalog = Record<TranslationKey, string>;
 const catalogs: Record<Locale, TranslationCatalog> = {
-  en: { ...en, ...operationalEn, ...jobsEn, ...applicationsEn },
-  ar: { ...ar, ...operationalAr, ...jobsAr, ...applicationsAr },
+  en: { ...en, ...operationalEn, ...jobsEn, ...applicationsEn, ...applicantEn },
+  ar: { ...ar, ...operationalAr, ...jobsAr, ...applicationsAr, ...applicantAr },
 };
 
 /** Missing keys are visible in the UI and logged, never silently replaced with English. */
