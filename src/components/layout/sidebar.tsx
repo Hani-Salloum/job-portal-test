@@ -1,4 +1,5 @@
 import {
+  BriefcaseBusiness,
   LayoutDashboard,
   LogOut,
   PanelLeftClose,
@@ -35,12 +36,13 @@ export function Sidebar({
   const t = useTranslation();
   const primaryNavigation = [
     { label: t("nav.dashboard"), icon: LayoutDashboard, href: "/dashboard" },
+    { label: t("nav.jobOpportunities"), icon: BriefcaseBusiness, href: "/dashboard/job-opportunities" },
   ];
   const plainPathname = pathname.replace(/^\/(?:en|ar)(?=\/|$)/, "") || "/";
 
   return (
     <aside
-      className={`sticky top-0 z-40 mt-5 flex h-[calc(100dvh_-_40px)] min-h-0 flex-col rounded-[30px] border border-border bg-chrome px-4 py-6 text-foreground shadow-sidebar rtl:border-r-0 max-lg:fixed max-lg:inset-y-0 max-lg:left-0 max-lg:h-dvh max-lg:w-[min(18rem,84vw)] max-lg:py-5 max-lg:shadow-drawer max-lg:transition-transform max-lg:duration-[220ms] max-lg:ease-[ease] max-lg:rtl:right-0 max-lg:rtl:left-auto max-lg:rtl:shadow-drawer-rtl ${collapsed ? "lg:px-[.7rem]" : ""} ${mobileOpen ? "max-lg:mt-0 max-lg:translate-x-0 max-lg:rounded-l-none max-lg:rounded-r-[30px] max-lg:rtl:rounded-l-[30px] max-lg:rtl:rounded-r-none" : "max-lg:-translate-x-[105%] max-lg:rtl:translate-x-[105%]"}`}
+      className={`sticky top-[20px] z-40 mt-5 flex h-[calc(100dvh_-_40px)] min-h-0 flex-col rounded-[30px] border border-border bg-chrome px-4 py-6 text-foreground shadow-sidebar rtl:border-r-0 max-lg:fixed max-lg:inset-y-0 max-lg:left-0 max-lg:h-dvh max-lg:w-[min(18rem,84vw)] max-lg:py-5 max-lg:shadow-drawer max-lg:transition-transform max-lg:duration-[220ms] max-lg:ease-[ease] max-lg:rtl:right-0 max-lg:rtl:left-auto max-lg:rtl:shadow-drawer-rtl ${collapsed ? "lg:px-[.7rem]" : ""} ${mobileOpen ? "max-lg:mt-0 max-lg:translate-x-0 max-lg:rounded-l-none max-lg:rounded-r-[30px] max-lg:rtl:rounded-l-[30px] max-lg:rtl:rounded-r-none" : "max-lg:-translate-x-[105%] max-lg:rtl:translate-x-[105%]"}`}
     >
       <Button
         className="absolute top-[1.45rem] -right-[25px] z-50 size-10 rounded-full border-border bg-surface text-foreground shadow-sidebar hover:bg-surface focus-visible:ring-0 focus-visible:ring-offset-0 rtl:right-auto rtl:-left-[25px] max-lg:hidden"
