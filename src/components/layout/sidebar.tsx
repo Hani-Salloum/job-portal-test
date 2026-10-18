@@ -76,7 +76,9 @@ export function Sidebar({
         {primaryNavigation.map(({ label, icon: Icon, href }) => {
           const active =
             plainPathname === href ||
-            (href !== "/dashboard" && plainPathname.startsWith(`${href}/`));
+            (href !== "/dashboard" && plainPathname.startsWith(`${href}/`)) ||
+            (href === "/dashboard/job-opportunities" &&
+              (plainPathname.startsWith("/job-opportunities/") || plainPathname.startsWith("/applicants/")));
           return (
             <Button
               variant="ghost"

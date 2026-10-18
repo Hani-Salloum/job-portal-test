@@ -247,11 +247,43 @@ const jobsAr: Record<keyof typeof jobsEn, string> = {
   "jobs.empty.description": "جرّب مسمى وظيفيًا أو مهارة أخرى، أو امسح عوامل التصفية لعرض جميع فرص العمل.",
 };
 
-export type TranslationKey = keyof typeof en | keyof typeof operationalEn | keyof typeof jobsEn;
+const applicationsEn = {
+  "applications.back": "Back to job opportunities",
+  "applications.experience": "Years of experience",
+
+  "applications.salary": "Expected salary",
+  "applications.perMonth": "/ month",
+  "applications.filters.label": "Filter applications",
+  "applications.filters.salary": "Monthly salary (USD)",
+  "applications.filters.minimum": "Minimum {filter}",
+  "applications.filters.maximum": "Maximum {filter}",
+  "applications.empty.title": "No applications yet",
+  "applications.empty.description": "Applications for this opportunity will appear here.",
+  "applications.empty.filteredTitle": "No matching applications",
+  "applications.empty.filteredDescription": "Widen the salary or experience range, or clear the filters to see all applicants.",
+} as const;
+
+const applicationsAr: Record<keyof typeof applicationsEn, string> = {
+  "applications.back": "العودة إلى فرص العمل",
+  "applications.experience": "سنوات الخبرة",
+
+  "applications.salary": "الراتب المتوقع",
+  "applications.perMonth": "/ شهر",
+  "applications.filters.label": "تصفية طلبات التوظيف",
+  "applications.filters.salary": "الراتب الشهري (دولار أمريكي)",
+  "applications.filters.minimum": "الحد الأدنى لـ{filter}",
+  "applications.filters.maximum": "الحد الأقصى لـ{filter}",
+  "applications.empty.title": "لا توجد طلبات توظيف بعد",
+  "applications.empty.description": "ستظهر طلبات التوظيف لهذه الفرصة هنا.",
+  "applications.empty.filteredTitle": "لا توجد طلبات مطابقة",
+  "applications.empty.filteredDescription": "وسّع نطاق الراتب أو الخبرة، أو امسح الفلاتر لعرض جميع المتقدمين.",
+};
+
+export type TranslationKey = keyof typeof en | keyof typeof operationalEn | keyof typeof jobsEn | keyof typeof applicationsEn;
 type TranslationCatalog = Record<TranslationKey, string>;
 const catalogs: Record<Locale, TranslationCatalog> = {
-  en: { ...en, ...operationalEn, ...jobsEn },
-  ar: { ...ar, ...operationalAr, ...jobsAr },
+  en: { ...en, ...operationalEn, ...jobsEn, ...applicationsEn },
+  ar: { ...ar, ...operationalAr, ...jobsAr, ...applicationsAr },
 };
 
 /** Missing keys are visible in the UI and logged, never silently replaced with English. */

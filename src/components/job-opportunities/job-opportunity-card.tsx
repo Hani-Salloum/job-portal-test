@@ -1,12 +1,12 @@
 "use client";
 
 import { useId, type ReactNode } from "react";
-import Link from "next/link";
+
 import {
   BriefcaseBusiness, CalendarDays, CircleDot, MapPin, Pause,
   Play, Send, UsersRound,
 } from "lucide-react";
-import { useLocale, useTranslation } from "@/components/locale-provider";
+import { LocalizedLink, useLocale, useTranslation } from "@/components/locale-provider";
 import { SkillBadges } from "@/components/job-opportunities/skill-badges";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -63,9 +63,9 @@ export function JobOpportunityCard({ data, onStatusAction }: JobOpportunityCardP
             </ActionTooltip>
             <ActionTooltip label={t("jobs.actions.applications")}>
               <Button variant="ghost" size="icon" className="size-11 rounded-2xl border border-transparent hover:border-border" asChild>
-                <Link href="/" aria-label={t("jobs.actions.applications")}>
+                <LocalizedLink href={`/job-opportunities/${encodeURIComponent(data.id)}/applications`} aria-label={t("jobs.actions.applications")}>
                   <UsersRound aria-hidden="true" className="size-[18px]" strokeWidth={1.75} />
-                </Link>
+                </LocalizedLink>
               </Button>
             </ActionTooltip>
           </div>

@@ -11,12 +11,12 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole("article")).toHaveCount(8);
 });
 
-test("renders eight cards, skill overflow, and placeholder applications links", async ({ page }, testInfo) => {
+test("renders eight cards, skill overflow, and applications links", async ({ page }, testInfo) => {
   const frontend = page.getByRole("article", { name: "Senior Frontend Engineer", exact: true });
   await expect(page.getByRole("heading", { name: "Job opportunities", level: 2 })).toHaveCount(0);
   await expect(page.getByText("Manage your openings, keep hiring on track, and find your next teammate.")).toHaveCount(0);
   await expect(page.getByText(/Showing \d+ of \d+ opportunities/)).toHaveCount(0);
-  await expect(frontend.getByRole("link", { name: "Show applications" })).toHaveAttribute("href", "/");
+  await expect(frontend.getByRole("link", { name: "Show applications" })).toHaveAttribute("href", "/en/job-opportunities/job-001/applications");
   await expect(frontend.getByText("Web Performance", { exact: true })).toHaveCount(0);
   const more = frontend.getByRole("button", { name: "Show 2 more skills" });
   const overflowBox = await more.boundingBox();
