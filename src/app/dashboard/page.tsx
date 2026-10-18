@@ -1,4 +1,4 @@
-import { DashboardShell } from "@/components/dashboard-shell";
+import { DashboardShell } from "@/components/layout/dashboard-shell";
 import { translate } from "@/lib/i18n";
 import { currentRouteLocale } from "@/lib/route-locale";
 

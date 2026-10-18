@@ -16,7 +16,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-32 overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-1 text-[var(--foreground)] shadow-[0_14px_35px_var(--chrome-shadow)] outline-none",
+        "z-50 min-w-32 overflow-hidden rounded-[30px] border border-[var(--border)] bg-[var(--surface)] p-1 text-[var(--foreground)] shadow-[0_14px_35px_var(--chrome-shadow)] outline-none",
         className,
       )}
       {...props}
@@ -40,7 +40,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "relative flex cursor-default select-none items-center gap-2 rounded-[var(--radius-sm)] px-2 py-2 text-sm font-semibold no-underline outline-none transition-colors hover:bg-[var(--muted)] hover:text-[var(--foreground)] focus:bg-[var(--muted)] focus:text-[var(--foreground)] focus:ring-2 focus:ring-inset focus:ring-[var(--foreground)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&>svg]:shrink-0",
+      "relative flex cursor-default select-none items-center gap-2 rounded-[20px] px-2 py-2 text-sm font-semibold no-underline outline-none transition-colors hover:bg-[var(--muted)] hover:text-[var(--foreground)] focus:bg-[var(--muted)] focus:text-[var(--foreground)] focus:ring-2 focus:ring-inset focus:ring-[var(--foreground)] data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&>svg]:shrink-0",
       className,
     )}
     {...props}

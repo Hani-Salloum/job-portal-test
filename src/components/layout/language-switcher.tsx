@@ -21,7 +21,7 @@ export function LanguageSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button type="button" variant="outline" size="icon" className="language-switcher" aria-label={t("language.switch")}>
+        <Button type="button" variant="outline" size="icon" className="grid size-[2.45rem] place-items-center rounded-full border-border bg-surface p-0 text-muted-foreground hover:bg-surface rtl:flex-row-reverse" aria-label={t("language.switch")}>
           <Languages aria-hidden="true" size={17} />
         </Button>
       </DropdownMenuTrigger>
